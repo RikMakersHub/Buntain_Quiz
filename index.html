@@ -4,40 +4,148 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buntain House Training Ground</title>
-    <script src="https://tailwindcss.com"></script>
-    <style>body { font-family: 'JetBrains Mono', monospace; }</style>
+    <style>
+        /* Core Document Baseline Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #020617;
+            color: #f8fafc;
+            font-family: 'Courier New', Courier, monospace;
+            min-height: screen;
+            display: flex;
+            flex-col: column;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+        }
+
+        /* Header Workspace Parameters */
+        header {
+            border-b: 1px solid rgba(234, 179, 8, 0.3);
+            border-bottom: 1px solid rgba(234, 179, 8, 0.3);
+            background-color: rgba(15, 23, 42, 0.5);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        header h1 {
+            color: #eab308;
+            font-size: 1.75rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            color: #94a3b8;
+            font-size: 0.875rem;
+        }
+
+        /* Main Grid Alignment System */
+        main {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        main h2 {
+            font-size: 1.25rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        @media (min-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Interactive Navigation Card Modules */
+        .sector-card {
+            background-color: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease-in-out;
+        }
+        .sector-card:hover {
+            border-color: #eab308;
+            transform: translateY(-2px);
+        }
+        .card-emoji {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .sector-card h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+            transition: color 0.2s;
+        }
+        .sector-card:hover h3 {
+            color: #eab308;
+        }
+        .sector-card p {
+            font-size: 0.75rem;
+            color: #64748b;
+        }
+
+        /* Footer Typography styling */
+        footer {
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #334155;
+            letter-spacing: 0.05em;
+        }
+    </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between">
-    <header class="border-b border-yellow-500/30 bg-slate-900/50 p-6 backdrop-blur-md text-center">
-        <h1 class="text-3xl font-bold tracking-wider text-yellow-400">BUNTAIN HOUSE TRAINING HUB</h1>
-        <p class="text-sm text-slate-400 mt-2">Class 6-8 Group B Master Console</p>
+<body>
+    <header>
+        <h1>BUNTAIN HOUSE TRAINING HUB</h1>
+        <p>Class 6-8 Group B Master Console</p>
     </header>
 
-    <main class="max-w-4xl w-full mx-auto p-8 flex-grow flex flex-col justify-center">
-        <h2 class="text-xl text-center mb-8 font-medium text-slate-300">Select an Isolated Core Training Sector:</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <a href="sector-india-files.html" class="p-6 bg-slate-900 border border-slate-800 rounded-xl hover:border-yellow-500 transition text-center group">
-                <span class="text-3xl block mb-2">🇮🇳</span>
-                <h3 class="text-lg font-bold group-hover:text-yellow-400">India Files</h3>
-                <p class="text-xs text-slate-500 mt-1">100 History & Geography Drills</p>
+    <main>
+        <h2>Select an Isolated Core Training Sector:</h2>
+        <div class="grid-container">
+            <a href="sector-india-files.html" class="sector-card">
+                <span class="card-emoji">🇲🇳</span>
+                <h3>India Files</h3>
+                <p>100 History & Geography Drills</p>
             </a>
-            <a href="sector-science.html" class="p-6 bg-slate-900 border border-slate-800 rounded-xl hover:border-yellow-500 transition text-center group">
-                <span class="text-3xl block mb-2">🧪</span>
-                <h3 class="text-lg font-bold group-hover:text-yellow-400">Spectacular Science</h3>
-                <p class="text-xs text-slate-500 mt-1">100 Physics, Chemistry, & Tech Nodes</p>
+            <a href="sector-science.html" class="sector-card">
+                <span class="card-emoji">🧪</span>
+                <h3>Spectacular Science</h3>
+                <p>100 Physics, Chemistry, & Tech Nodes</p>
             </a>
-            <a href="sector-mix-bag.html" class="p-6 bg-slate-900 border border-slate-800 rounded-xl hover:border-yellow-500 transition text-center group">
-                <span class="text-3xl block mb-2">🎲</span>
-                <h3 class="text-lg font-bold group-hover:text-yellow-400">Mix Bag</h3>
-                <p class="text-xs text-slate-500 mt-1">100 True / False Speed Challenges</p>
+            <a href="sector-mix-bag.html" class="sector-card">
+                <span class="card-emoji">🎲</span>
+                <h3>Mix Bag</h3>
+                <p>100 True / False Speed Challenges</p>
             </a>
-            <a href="sector-sports-ent.html" class="p-6 bg-slate-900 border border-slate-800 rounded-xl hover:border-yellow-500 transition text-center group">
-                <span class="text-3xl block mb-2">🏆</span>
-                <h3 class="text-lg font-bold group-hover:text-yellow-400">Sports & Entertainment</h3>
-                <p class="text-xs text-slate-500 mt-1">100 Global Culture & Sports Prompts</p>
+            <a href="sector-sports-ent.html" class="sector-card">
+                <span class="card-emoji">🏆</span>
+                <h3>Sports & Entertainment</h3>
+                <p>100 Global Culture & Sports Prompts</p>
             </a>
         </div>
     </main>
-    <footer class="p-4 text-center text-xs text-slate-700"> RikMakersHub &bull; Version Control System </footer>
+
+    <footer> RikMakersHub &bull; Version Control System </footer>
 </body>
 </html>
